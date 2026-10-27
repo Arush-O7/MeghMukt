@@ -1,0 +1,282 @@
+Training unet on mps for 5000 steps (val every 333) ...
+step    333  loss 1.3539  val PSNR(cloud) 29.25 dB  1.8 min  *saved*
+step    666  loss 0.6398  val PSNR(cloud) 29.72 dB  3.6 min  *saved*
+step    999  loss 0.5850  val PSNR(cloud) 30.60 dB  5.8 min  *saved*
+step   1332  loss 0.5398  val PSNR(cloud) 31.07 dB  7.9 min  *saved*
+step   1665  loss 0.5078  val PSNR(cloud) 31.42 dB  9.8 min  *saved*
+step   1998  loss 0.4917  val PSNR(cloud) 31.71 dB  11.7 min  *saved*
+step   2331  loss 0.4770  val PSNR(cloud) 31.69 dB  13.6 min
+step   2664  loss 0.4681  val PSNR(cloud) 32.00 dB  15.7 min  *saved*
+step   2997  loss 0.4634  val PSNR(cloud) 32.23 dB  17.7 min  *saved*
+step   3330  loss 0.4508  val PSNR(cloud) 32.20 dB  19.9 min
+step   3663  loss 0.4497  val PSNR(cloud) 32.40 dB  21.8 min  *saved*
+step   3996  loss 0.4428  val PSNR(cloud) 32.51 dB  23.8 min  *saved*
+step   4329  loss 0.4381  val PSNR(cloud) 32.49 dB  25.7 min
+step   4662  loss 0.4354  val PSNR(cloud) 32.59 dB  27.5 min  *saved*
+step   4995  loss 0.4319  val PSNR(cloud) 32.58 dB  29.4 min
+step   5000  loss 0.4319  val PSNR(cloud) 32.58 dB  29.5 min
+Done. best val PSNR(cloud) = 32.59 dB -> checkpoints/unet.pt
+Training meghgan on mps for 6000 steps (val every 400) ...
+step    400  loss 4.8006  val PSNR(cloud) -0.32 dB  3.3 min  *saved*
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:324: UserWarning: resource_tracker: There appear to be 20 leaked semaphore objects to clean up at shutdown: {'/loky-16679-dsr4gz4d', '/loky-16679-1lgob1jk', '/loky-16679-t1gksp_d', '/loky-16679-8apxyjov', '/loky-16679-dfvj_7kg', '/loky-16679-uyjtjqsk', '/loky-16679-vcfuc4ld', '/loky-16679-_w7et392', '/loky-16679-l8a75igz', '/loky-16679-8bbi1aea', '/loky-16679-jag9n7jc', '/loky-16679-2b2jczwc', '/loky-16679-zcfbee4j', '/loky-16679-k7y1zii4', '/loky-16679-8kak9tea', '/loky-16679-mlwnszm8', '/loky-16679-coup6ta9', '/loky-16679-hzl2_lbt', '/loky-16679-khzd06pl', '/loky-16679-zsv4xs1u'}
+  warnings.warn(
+skip unet
+Training meghgan on mps for 6000 steps (val every 400) ...
+step    400  loss 1.6864  val PSNR(cloud) 28.90 dB  3.3 min  *saved*
+step    800  loss 0.7746  val PSNR(cloud) 33.39 dB  6.6 min  *saved*
+step   1200  loss 0.6092  val PSNR(cloud) 33.94 dB  9.8 min  *saved*
+step   1600  loss 0.5610  val PSNR(cloud) 34.48 dB  13.0 min  *saved*
+step   2000  loss 0.5376  val PSNR(cloud) 34.74 dB  16.2 min  *saved*
+step   2400  loss 0.5185  val PSNR(cloud) 34.59 dB  19.3 min
+step   2800  loss 0.4942  val PSNR(cloud) 34.24 dB  22.5 min
+step   3200  loss 0.4705  val PSNR(cloud) 34.46 dB  25.6 min
+step   3600  loss 0.4637  val PSNR(cloud) 35.59 dB  28.6 min  *saved*
+step   4000  loss 0.4513  val PSNR(cloud) 35.96 dB  31.7 min  *saved*
+step   4400  loss 0.4430  val PSNR(cloud) 35.87 dB  34.8 min
+step   4800  loss 0.4415  val PSNR(cloud) 36.06 dB  37.8 min  *saved*
+step   5200  loss 0.4379  val PSNR(cloud) 35.85 dB  40.9 min
+step   5600  loss 0.4292  val PSNR(cloud) 35.93 dB  43.9 min
+step   6000  loss 0.4219  val PSNR(cloud) 35.97 dB  47.0 min
+Done. best val PSNR(cloud) = 36.06 dB -> checkpoints/meghgan.pt
+Training meghgan_nospectral on mps for 6000 steps (val every 400) ...
+step    400  loss 1.3075  val PSNR(cloud) 29.88 dB  3.6 min  *saved*
+step    800  loss 0.5303  val PSNR(cloud) 33.64 dB  7.1 min  *saved*
+step   1200  loss 0.4459  val PSNR(cloud) 33.96 dB  10.8 min  *saved*
+step   1600  loss 0.4156  val PSNR(cloud) 34.48 dB  14.0 min  *saved*
+step   2000  loss 0.3990  val PSNR(cloud) 34.51 dB  17.6 min  *saved*
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:324: UserWarning: resource_tracker: There appear to be 20 leaked semaphore objects to clean up at shutdown: {'/loky-17217-2hbhasrn', '/loky-17217-r6d3o_0l', '/loky-17217-9c86r0tx', '/loky-17217-81t8e53p', '/loky-17217-pxlp_aqd', '/loky-17217-9sjrgr08', '/loky-17217-yipqrx6s', '/loky-17217-l6xgt7hh', '/loky-17217-sxn0akpp', '/loky-17217-rf7x_ims', '/loky-17217-wxzzbd3c', '/loky-17217-dq55qccf', '/loky-17217-i32p89us', '/loky-17217-zmgvrc50', '/loky-17217-3dksljxr', '/loky-17217-wk2lihzk', '/loky-17217-kicsfr5u', '/loky-17217-6638x48v', '/loky-17217-ik70oepy', '/loky-17217-uw3vl24y'}
+  warnings.warn(
+=== restart Mon Oct 19 04:27:47 IST 2026 (reference-anchored MeghGAN) ===
+skip unet
+Training meghgan on mps for 6000 steps (val every 400) ...
+step    400  loss 0.9349  val PSNR(cloud) 33.27 dB  2.9 min  *saved*
+step    800  loss 0.6549  val PSNR(cloud) 33.83 dB  6.0 min  *saved*
+step   1200  loss 0.5969  val PSNR(cloud) 33.87 dB  9.1 min  *saved*
+step   1600  loss 0.5518  val PSNR(cloud) 34.36 dB  12.2 min  *saved*
+step   2000  loss 0.5254  val PSNR(cloud) 33.95 dB  15.2 min
+step   2400  loss 0.5058  val PSNR(cloud) 34.02 dB  18.3 min
+step   2800  loss 0.4876  val PSNR(cloud) 33.98 dB  21.4 min
+step   3200  loss 0.4711  val PSNR(cloud) 34.57 dB  24.5 min  *saved*
+step   3600  loss 0.4680  val PSNR(cloud) 34.38 dB  27.6 min
+step   4000  loss 0.4581  val PSNR(cloud) 34.79 dB  30.7 min  *saved*
+step   4400  loss 0.4520  val PSNR(cloud) 35.16 dB  33.8 min  *saved*
+step   4800  loss 0.4530  val PSNR(cloud) 35.42 dB  36.9 min  *saved*
+step   5200  loss 0.4487  val PSNR(cloud) 35.38 dB  40.0 min
+step   5600  loss 0.4469  val PSNR(cloud) 35.38 dB  43.1 min
+step   6000  loss 0.4397  val PSNR(cloud) 35.36 dB  46.2 min
+Done. best val PSNR(cloud) = 35.42 dB -> checkpoints/meghgan.pt
+Training meghgan_nospectral on mps for 6000 steps (val every 400) ...
+step    400  loss 0.7379  val PSNR(cloud) 33.16 dB  3.4 min  *saved*
+step    800  loss 0.4767  val PSNR(cloud) 33.28 dB  6.4 min  *saved*
+step   1200  loss 0.4389  val PSNR(cloud) 33.29 dB  9.4 min  *saved*
+step   1600  loss 0.4144  val PSNR(cloud) 33.98 dB  12.4 min  *saved*
+step   2000  loss 0.3966  val PSNR(cloud) 34.26 dB  15.5 min  *saved*
+step   2400  loss 0.3837  val PSNR(cloud) 34.22 dB  18.5 min
+step   2800  loss 0.3708  val PSNR(cloud) 34.64 dB  21.5 min  *saved*
+step   3200  loss 0.3592  val PSNR(cloud) 35.20 dB  24.6 min  *saved*
+step   3600  loss 0.3582  val PSNR(cloud) 35.28 dB  28.3 min  *saved*
+step   4000  loss 0.3530  val PSNR(cloud) 35.62 dB  32.0 min  *saved*
+step   4400  loss 0.3478  val PSNR(cloud) 35.55 dB  35.7 min
+step   4800  loss 0.3496  val PSNR(cloud) 35.85 dB  207.8 min  *saved*
+step   5200  loss 0.3480  val PSNR(cloud) 35.88 dB  211.7 min  *saved*
+step   5600  loss 0.3465  val PSNR(cloud) 35.91 dB  215.8 min  *saved*
+step   6000  loss 0.3418  val PSNR(cloud) 35.87 dB  219.3 min
+Done. best val PSNR(cloud) = 35.91 dB -> checkpoints/meghgan_nospectral.pt
+Training diffusion on mps for 10000 steps (val every 666) ...
+step    666  loss 1.8296  val PSNR(cloud) 21.10 dB  3.2 min  *saved*
+step   1332  loss 0.2898  val PSNR(cloud) 23.30 dB  6.6 min  *saved*
+step   1998  loss 0.2633  val PSNR(cloud) 23.02 dB  9.9 min
+step   2664  loss 0.2325  val PSNR(cloud) 21.92 dB  13.2 min
+step   3330  loss 0.2427  val PSNR(cloud) 24.74 dB  16.6 min  *saved*
+step   3996  loss 0.2300  val PSNR(cloud) 22.93 dB  20.1 min
+step   4662  loss 0.2201  val PSNR(cloud) 23.46 dB  23.9 min
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:324: UserWarning: resource_tracker: There appear to be 20 leaked semaphore objects to clean up at shutdown: {'/loky-18889-ajuwtj1m', '/loky-18889-7bqe2drf', '/loky-18889-cm2dmj4i', '/loky-18889-t0abejc1', '/loky-18889-2cozmfi3', '/loky-18889-yccnjpb7', '/loky-18889-jdtkno5r', '/loky-18889-l6cocvkk', '/loky-18889-25u5510f', '/loky-18889-6zfth5ys', '/loky-18889-tqe5xjhy', '/loky-18889-n2slm_z9', '/loky-18889-8w9c8rk8', '/loky-18889-fy4jdxbj', '/loky-18889-aauefurj', '/loky-18889-ts3i9up5', '/loky-18889-xnl8ufph', '/loky-18889-tenxwyje', '/loky-18889-umqs1rso', '/loky-18889-i2ucybeq'}
+  warnings.warn(
+=== restart Mon Oct 19 09:19:14 IST 2026 (residual diffusion) ===
+skip unet
+skip meghgan
+skip meghgan_nospectral
+Training diffusion on mps for 10000 steps (val every 666) ...
+step    666  loss 1.9645  val PSNR(cloud) 22.57 dB  3.6 min  *saved*
+=== restart Mon Oct 19 09:23:19 IST 2026 (residual diffusion, x0-prediction) ===
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:324: UserWarning: resource_tracker: There appear to be 20 leaked semaphore objects to clean up at shutdown: {'/loky-19128-lcfuf4_p', '/loky-19128-1r_s_ay5', '/loky-19128-hzo52g96', '/loky-19128-sbmbmtv5', '/loky-19128-v20w1ysd', '/loky-19128-c5hzsa57', '/loky-19128-egqn0zn3', '/loky-19128-4cpbct47', '/loky-19128-x232f81z', '/loky-19128-070t6xz0', '/loky-19128-ni8pfbzq', '/loky-19128-2gubjii6', '/loky-19128-s015xaca', '/loky-19128-xxiub8ee', '/loky-19128-_h1a__d1', '/loky-19128-l9m7d_xq', '/loky-19128-f_olpyfh', '/loky-19128-s7gs4bn0', '/loky-19128-q1fbxaj4', '/loky-19128-g6580s9p'}
+  warnings.warn(
+skip unet
+skip meghgan
+skip meghgan_nospectral
+Training diffusion on mps for 10000 steps (val every 666) ...
+step    666  loss 14.4336  val PSNR(cloud) 31.93 dB  4.0 min  *saved*
+step   1332  loss 1.0950  val PSNR(cloud) 30.11 dB  7.6 min
+step   1998  loss 0.6267  val PSNR(cloud) 30.18 dB  11.1 min
+step   2664  loss 0.5176  val PSNR(cloud) 29.47 dB  14.6 min
+step   3330  loss 0.4745  val PSNR(cloud) 32.23 dB  18.1 min  *saved*
+step   3996  loss 0.4197  val PSNR(cloud) 30.82 dB  21.7 min
+step   4662  loss 0.3965  val PSNR(cloud) 32.31 dB  25.3 min  *saved*
+step   5328  loss 0.3643  val PSNR(cloud) 32.27 dB  28.9 min
+step   5994  loss 0.3343  val PSNR(cloud) 32.41 dB  32.4 min  *saved*
+step   6660  loss 0.3060  val PSNR(cloud) 32.72 dB  36.0 min  *saved*
+step   7326  loss 0.2979  val PSNR(cloud) 32.75 dB  39.5 min  *saved*
+step   7992  loss 0.2863  val PSNR(cloud) 32.89 dB  43.0 min  *saved*
+step   8658  loss 0.2847  val PSNR(cloud) 32.44 dB  46.5 min
+step   9324  loss 0.2785  val PSNR(cloud) 32.54 dB  49.9 min
+step   9990  loss 0.2744  val PSNR(cloud) 32.53 dB  53.2 min
+step  10000  loss 0.2718  val PSNR(cloud) 32.62 dB  53.3 min
+Done. best val PSNR(cloud) = 32.89 dB -> checkpoints/diffusion.pt
+Training meghgan_liss4ft on mps for 800 steps (val every 53) ...
+step     53  loss 0.2699  val PSNR(cloud) 34.68 dB  0.5 min  *saved*
+step    106  loss 0.2335  val PSNR(cloud) 34.79 dB  0.9 min  *saved*
+step    159  loss 0.2195  val PSNR(cloud) 34.81 dB  1.3 min  *saved*
+step    212  loss 0.2173  val PSNR(cloud) 34.21 dB  1.7 min  *saved*
+step    265  loss 0.2155  val PSNR(cloud) 34.54 dB  2.1 min  *saved*
+step    318  loss 0.2101  val PSNR(cloud) 34.63 dB  2.5 min  *saved*
+step    371  loss 0.2092  val PSNR(cloud) 34.63 dB  3.0 min  *saved*
+step    424  loss 0.2085  val PSNR(cloud) 34.30 dB  3.4 min  *saved*
+step    477  loss 0.2105  val PSNR(cloud) 34.33 dB  3.9 min  *saved*
+step    530  loss 0.2046  val PSNR(cloud) 34.44 dB  4.4 min  *saved*
+step    583  loss 0.2059  val PSNR(cloud) 34.36 dB  4.8 min  *saved*
+step    636  loss 0.1971  val PSNR(cloud) 34.37 dB  5.3 min  *saved*
+step    689  loss 0.1994  val PSNR(cloud) 34.42 dB  5.8 min  *saved*
+step    742  loss 0.2007  val PSNR(cloud) 34.36 dB  6.2 min  *saved*
+step    795  loss 0.1985  val PSNR(cloud) 34.36 dB  6.7 min  *saved*
+step    800  loss 0.1978  val PSNR(cloud) 34.36 dB  6.7 min  *saved*
+Done. best val PSNR(cloud) = 34.36 dB -> checkpoints/meghgan_liss4ft.pt
+Training unet_liss4ft on mps for 800 steps (val every 53) ...
+step     53  loss 0.1637  val PSNR(cloud) 31.81 dB  0.4 min  *saved*
+step    106  loss 0.1500  val PSNR(cloud) 31.56 dB  0.7 min  *saved*
+step    159  loss 0.1404  val PSNR(cloud) 31.65 dB  0.9 min  *saved*
+step    212  loss 0.1379  val PSNR(cloud) 31.60 dB  1.2 min  *saved*
+step    265  loss 0.1347  val PSNR(cloud) 31.58 dB  1.5 min  *saved*
+step    318  loss 0.1335  val PSNR(cloud) 31.50 dB  1.7 min  *saved*
+step    371  loss 0.1273  val PSNR(cloud) 31.44 dB  2.0 min  *saved*
+step    424  loss 0.1305  val PSNR(cloud) 31.34 dB  2.3 min  *saved*
+step    477  loss 0.1290  val PSNR(cloud) 31.31 dB  2.6 min  *saved*
+step    530  loss 0.1283  val PSNR(cloud) 31.43 dB  2.9 min  *saved*
+step    583  loss 0.1283  val PSNR(cloud) 31.25 dB  3.2 min  *saved*
+step    636  loss 0.1244  val PSNR(cloud) 31.32 dB  3.5 min  *saved*
+step    689  loss 0.1258  val PSNR(cloud) 31.34 dB  3.8 min  *saved*
+step    742  loss 0.1244  val PSNR(cloud) 31.35 dB  4.1 min  *saved*
+step    795  loss 0.1249  val PSNR(cloud) 31.36 dB  4.4 min  *saved*
+step    800  loss 0.1313  val PSNR(cloud) 31.36 dB  4.4 min  *saved*
+Done. best val PSNR(cloud) = 31.36 dB -> checkpoints/unet_liss4ft.pt
+ALL TRAINING DONE
+=== E4 Mon Oct 19 16:15:51 IST 2026 ===
+Training meghgan_noadv on mps for 6000 steps (val every 400) ...
+step    400  loss 0.9194  val PSNR(cloud) 33.31 dB  2.2 min  *saved*
+step    800  loss 0.6373  val PSNR(cloud) 33.55 dB  4.3 min  *saved*
+step   1200  loss 0.5787  val PSNR(cloud) 33.28 dB  6.7 min
+step   1600  loss 0.5220  val PSNR(cloud) 34.06 dB  9.2 min  *saved*
+step   2000  loss 0.4995  val PSNR(cloud) 34.58 dB  11.8 min  *saved*
+step   2400  loss 0.4731  val PSNR(cloud) 34.30 dB  14.5 min
+step   2800  loss 0.4571  val PSNR(cloud) 33.65 dB  17.4 min
+step   3200  loss 0.4469  val PSNR(cloud) 34.94 dB  19.7 min  *saved*
+step   3600  loss 0.4335  val PSNR(cloud) 34.62 dB  22.1 min
+step   4000  loss 0.4274  val PSNR(cloud) 34.72 dB  24.4 min
+step   4400  loss 0.4187  val PSNR(cloud) 35.01 dB  26.8 min  *saved*
+step   4800  loss 0.4122  val PSNR(cloud) 34.84 dB  29.2 min
+step   5200  loss 0.4167  val PSNR(cloud) 34.94 dB  31.7 min
+step   5600  loss 0.4089  val PSNR(cloud) 34.80 dB  34.2 min
+step   6000  loss 0.4072  val PSNR(cloud) 34.91 dB  36.9 min
+Done. best val PSNR(cloud) = 35.01 dB -> checkpoints/meghgan_noadv.pt
+Training meghgan_charb on mps for 6000 steps (val every 400) ...
+step    400  loss 0.9317  val PSNR(cloud) 33.08 dB  3.3 min  *saved*
+step    800  loss 0.6577  val PSNR(cloud) 33.87 dB  6.7 min  *saved*
+step   1200  loss 0.5976  val PSNR(cloud) 34.04 dB  10.2 min  *saved*
+step   1600  loss 0.5508  val PSNR(cloud) 34.54 dB  13.6 min  *saved*
+step   2000  loss 0.5283  val PSNR(cloud) 34.04 dB  17.0 min
+step   2400  loss 0.5129  val PSNR(cloud) 34.06 dB  20.2 min
+step   2800  loss 0.4833  val PSNR(cloud) 34.09 dB  23.5 min
+step   3200  loss 0.4682  val PSNR(cloud) 34.30 dB  26.8 min
+step   3600  loss 0.4665  val PSNR(cloud) 34.15 dB  30.3 min
+step   4000  loss 0.4561  val PSNR(cloud) 34.62 dB  33.9 min  *saved*
+step   4400  loss 0.4503  val PSNR(cloud) 34.32 dB  37.2 min
+step   4800  loss 0.4522  val PSNR(cloud) 35.01 dB  40.6 min  *saved*
+step   5200  loss 0.4493  val PSNR(cloud) 35.08 dB  44.0 min  *saved*
+step   5600  loss 0.4471  val PSNR(cloud) 34.98 dB  47.4 min
+step   6000  loss 0.4403  val PSNR(cloud) 34.95 dB  50.8 min
+Done. best val PSNR(cloud) = 35.08 dB -> checkpoints/meghgan_charb.pt
+E4 TRAINING DONE
+=== real-cloud fine-tune Mon Oct 19 22:48:50 IST 2026 ===
+[real] training areas
+  aizawl     2024-04-17 corr 0.76 cloud 59% DROPPED
+  aizawl     2023-12-29 corr 0.84 cloud 73% kept
+  aizawl     2022-11-04 corr 0.91 cloud 55% kept
+  dimapur    2023-12-04 corr 0.90 cloud 0% DROPPED
+  dimapur    2025-04-02 corr 0.89 cloud 41% kept
+  dimapur    2023-10-20 corr 0.85 cloud 74% kept
+  guwahati   2024-10-27 corr 0.93 cloud 68% kept
+  guwahati   2025-03-11 corr 0.93 cloud 63% kept
+  guwahati   2023-01-31 corr 0.95 cloud 65% kept
+  kaziranga  2023-12-14 corr 0.88 cloud 58% kept
+  kaziranga  2023-10-10 corr 0.73 cloud 74% DROPPED
+  kaziranga  2022-12-29 corr 0.47 cloud 99% DROPPED
+  majuli     2024-02-17 corr 0.76 cloud 60% DROPPED
+  majuli     2024-02-07 corr 0.67 cloud 54% DROPPED
+  majuli     2024-04-07 corr 0.70 cloud 47% DROPPED
+  pasighat   2024-10-29 corr 0.81 cloud 85% kept
+  pasighat   2024-02-27 corr 0.94 cloud 0% DROPPED
+  pasighat   2024-01-18 corr 0.81 cloud 42% kept
+  shillong   2023-12-12 corr 0.90 cloud 70% kept
+  shillong   2022-12-27 corr 0.62 cloud 62% DROPPED
+  shillong   2025-01-20 corr 0.84 cloud 57% kept
+[real] 12 training pairs -> realpairs_train.npz
+[real] validation area
+  silchar    2024-05-22 corr 0.90 cloud 30% kept
+  silchar    2023-12-14 corr 0.90 cloud 53% kept
+[real] 48 validation crops from 2 real pairs -> eval_real_val.npz
+Training meghgan_real on mps for 2500 steps (val every 166) ...
+step    166  loss 0.6210  val PSNR(cloud) 34.97 dB  1.2 min  *saved*
+step    332  loss 0.5686  val PSNR(cloud) 34.78 dB  2.3 min
+step    498  loss 0.5436  val PSNR(cloud) 35.09 dB  3.4 min  *saved*
+step    664  loss 0.5546  val PSNR(cloud) 35.00 dB  4.4 min
+step    830  loss 0.5240  val PSNR(cloud) 35.07 dB  5.6 min
+step    996  loss 0.5293  val PSNR(cloud) 35.33 dB  6.8 min  *saved*
+step   1162  loss 0.5239  val PSNR(cloud) 35.31 dB  8.0 min
+step   1328  loss 0.5178  val PSNR(cloud) 35.22 dB  9.2 min
+step   1494  loss 0.5160  val PSNR(cloud) 34.84 dB  10.5 min
+step   1660  loss 0.5086  val PSNR(cloud) 34.77 dB  11.7 min
+step   1826  loss 0.5145  val PSNR(cloud) 35.12 dB  12.9 min
+step   1992  loss 0.5139  val PSNR(cloud) 35.03 dB  14.2 min
+step   2158  loss 0.5105  val PSNR(cloud) 34.81 dB  15.4 min
+step   2324  loss 0.5105  val PSNR(cloud) 34.96 dB  16.6 min
+step   2490  loss 0.5148  val PSNR(cloud) 35.00 dB  17.9 min
+step   2500  loss 0.5206  val PSNR(cloud) 35.00 dB  18.0 min
+Done. best val PSNR(cloud) = 35.33 dB -> checkpoints/meghgan_real.pt
+Training diffusion_real on mps for 2500 steps (val every 166) ...
+step    166  loss 0.3942  val PSNR(cloud) 31.44 dB  0.9 min  *saved*
+step    332  loss 0.3940  val PSNR(cloud) 32.19 dB  1.6 min  *saved*
+step    498  loss 0.3653  val PSNR(cloud) 32.24 dB  2.4 min  *saved*
+step    664  loss 0.3511  val PSNR(cloud) 32.76 dB  3.2 min  *saved*
+step    830  loss 0.3349  val PSNR(cloud) 32.23 dB  4.0 min
+step    996  loss 0.3688  val PSNR(cloud) 33.25 dB  4.9 min  *saved*
+step   1162  loss 0.3367  val PSNR(cloud) 33.10 dB  5.7 min
+step   1328  loss 0.3253  val PSNR(cloud) 32.61 dB  6.5 min
+step   1494  loss 0.3133  val PSNR(cloud) 33.34 dB  7.3 min  *saved*
+step   1660  loss 0.3269  val PSNR(cloud) 33.30 dB  8.1 min
+step   1826  loss 0.3166  val PSNR(cloud) 32.72 dB  8.9 min
+step   1992  loss 0.3187  val PSNR(cloud) 32.82 dB  9.7 min
+step   2158  loss 0.3251  val PSNR(cloud) 32.94 dB  10.5 min
+step   2324  loss 0.3098  val PSNR(cloud) 33.03 dB  11.3 min
+step   2490  loss 0.3091  val PSNR(cloud) 33.05 dB  12.1 min
+step   2500  loss 0.3349  val PSNR(cloud) 32.88 dB  12.2 min
+Done. best val PSNR(cloud) = 33.34 dB -> checkpoints/diffusion_real.pt
+figures -> results/figures
+REAL-CLOUD PIPELINE DONE
+=== LISS-IV fine-tune Tue Oct 20 14:32:25 IST 2026 ===
+Training meghgan_liss4 on mps for 2500 steps (val every 166) ...
+step    166  loss 0.4892  val PSNR(cloud) 35.76 dB  1.2 min  *saved*
+step    332  loss 0.4840  val PSNR(cloud) 36.05 dB  2.6 min  *saved*
+step    498  loss 0.4820  val PSNR(cloud) 36.04 dB  4.0 min
+step    664  loss 0.4772  val PSNR(cloud) 35.99 dB  5.4 min
+step    830  loss 0.4728  val PSNR(cloud) 36.34 dB  6.8 min  *saved*
+step    996  loss 0.4721  val PSNR(cloud) 36.43 dB  8.1 min  *saved*
+step   1162  loss 0.4760  val PSNR(cloud) 36.37 dB  9.6 min
+step   1328  loss 0.4811  val PSNR(cloud) 36.66 dB  11.0 min  *saved*
+step   1494  loss 0.4691  val PSNR(cloud) 36.57 dB  12.4 min
+step   1660  loss 0.4729  val PSNR(cloud) 36.65 dB  13.8 min
+step   1826  loss 0.4639  val PSNR(cloud) 36.72 dB  15.3 min  *saved*
+step   1992  loss 0.4746  val PSNR(cloud) 36.76 dB  16.7 min  *saved*
+step   2158  loss 0.4699  val PSNR(cloud) 36.76 dB  18.1 min
+step   2324  loss 0.4718  val PSNR(cloud) 36.73 dB  19.5 min
+step   2490  loss 0.4710  val PSNR(cloud) 36.74 dB  20.9 min
+step   2500  loss 0.4630  val PSNR(cloud) 36.74 dB  21.0 min
+Done. best val PSNR(cloud) = 36.76 dB -> checkpoints/meghgan_liss4.pt

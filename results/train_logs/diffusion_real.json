@@ -1,0 +1,12 @@
+{
+  "tag": "diffusion_real",
+  "model": "diffusion",
+  "steps": 2500,
+  "best_val_psnr_cloud": 33.33826824029287,
+  "minutes": 12.2,
+  "device": "mps",
+  "lambdas": {
+    "l1": 10.0,
+    "ssim": 2.0
+  }
+}

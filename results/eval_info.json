@@ -1,0 +1,17 @@
+{
+  "device": "mps",
+  "models": [
+    "copy_input",
+    "classical",
+    "unet",
+    "unet_liss4ft",
+    "meghgan",
+    "meghgan_nospectral",
+    "meghgan_noadv",
+    "meghgan_charb",
+    "meghgan_real",
+    "meghgan_liss4ft",
+    "diffusion",
+    "diffusion_real"
+  ]
+}

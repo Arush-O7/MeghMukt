@@ -1,0 +1,12 @@
+{
+  "tag": "unet",
+  "model": "unet",
+  "steps": 5000,
+  "best_val_psnr_cloud": 32.59051742156347,
+  "minutes": 29.5,
+  "device": "mps",
+  "lambdas": {
+    "l1": 10.0,
+    "ssim": 2.0
+  }
+}

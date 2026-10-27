@@ -1,0 +1,41 @@
+estimator,bin,mean_abs_error
+MeghGAN test-time-augmentation spread,1,0.010902050882577896
+MeghGAN test-time-augmentation spread,2,0.009232445620000362
+MeghGAN test-time-augmentation spread,3,0.00874139741063118
+MeghGAN test-time-augmentation spread,4,0.008526026271283627
+MeghGAN test-time-augmentation spread,5,0.008521407842636108
+MeghGAN test-time-augmentation spread,6,0.008631858974695206
+MeghGAN test-time-augmentation spread,7,0.00874381698668003
+MeghGAN test-time-augmentation spread,8,0.008814125321805477
+MeghGAN test-time-augmentation spread,9,0.008858520537614822
+MeghGAN test-time-augmentation spread,10,0.009016838856041431
+deployed: diffusion spread x depth,1,0.01204495970159769
+deployed: diffusion spread x depth,2,0.010884985327720642
+deployed: diffusion spread x depth,3,0.010385916568338871
+deployed: diffusion spread x depth,4,0.009985916316509247
+deployed: diffusion spread x depth,5,0.009629420936107635
+deployed: diffusion spread x depth,6,0.00919377338141203
+deployed: diffusion spread x depth,7,0.008688243106007576
+deployed: diffusion spread x depth,8,0.007920938543975353
+deployed: diffusion spread x depth,9,0.006510688923299313
+deployed: diffusion spread x depth,10,0.004743646830320358
+depth inside cloud,1,0.011305052787065506
+depth inside cloud,2,0.010605018585920334
+depth inside cloud,3,0.010240240953862667
+depth inside cloud,4,0.009913885965943336
+depth inside cloud,5,0.009618449956178665
+depth inside cloud,6,0.009283013641834259
+depth inside cloud,7,0.008814362809062004
+depth inside cloud,8,0.008452476933598518
+depth inside cloud,9,0.006538096349686384
+depth inside cloud,10,0.004763233475387096
+diffusion-sample spread,1,0.011932974681258202
+diffusion-sample spread,2,0.010709499940276146
+diffusion-sample spread,3,0.010165991261601448
+diffusion-sample spread,4,0.009753488935530186
+diffusion-sample spread,5,0.009365216828882694
+diffusion-sample spread,6,0.008999097160995007
+diffusion-sample spread,7,0.008591151796281338
+diffusion-sample spread,8,0.008014900609850883
+diffusion-sample spread,9,0.007077780552208424
+diffusion-sample spread,10,0.0053783864714205265

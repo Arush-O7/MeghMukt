@@ -1,0 +1,62 @@
+
+### test — with_ref
+
+| Model | PSNR cloud (dB) | SSIM cloud | MAE cloud | SAM cloud (°) | NDVI MAE | Land-cover agree | Sharpness | NIQE ↓ | Unc. ρ |
+|---|---|---|---|---|---|---|---|---|---|
+| Do nothing (cloudy input) | 15.12 | 0.349 | 0.1594 | 5.76 | 0.107 | 47.9% | 2.20 | 4.09 |  |
+| M0 Classical temporal fill | 35.00 | 0.865 | 0.0138 | 3.36 | 0.061 | 60.5% | 0.85 | 2.32 |  |
+| M1 U-Net baseline | 34.55 | 0.749 | 0.0129 | 3.30 | 0.060 | 63.8% | 0.67 | 2.63 | 0.42 |
+| M2 MeghGAN (ours) | 37.91 | 0.905 | 0.0088 | 2.26 | 0.040 | 73.3% | 0.95 | 2.09 | 0.29 |
+| M2 MeghGAN w/o spectral loss | 38.02 | 0.909 | 0.0086 | 2.31 | 0.041 | 72.7% | 0.95 | 2.09 | 0.33 |
+| M2 without GAN loss (ablation) | 37.81 | 0.903 | 0.0089 | 2.29 | 0.040 | 72.9% | 0.92 | 2.12 | 0.28 |
+| M2 + Charbonnier loss | 37.81 | 0.904 | 0.0090 | 2.27 | 0.040 | 73.3% | 0.94 | 2.09 | 0.29 |
+| M2 MeghGAN + real-cloud training | 37.50 | 0.902 | 0.0093 | 2.38 | 0.042 | 71.9% | 0.94 | 2.09 | 0.28 |
+| M3 Conditional diffusion | 35.40 | 0.861 | 0.0124 | 3.03 | 0.055 | 63.4% | 0.93 | 2.32 | 0.29 |
+| M3 Diffusion + real-cloud training | 34.84 | 0.857 | 0.0134 | 3.53 | 0.065 | 57.4% | 0.92 | 2.31 | 0.25 |
+
+### test — no_ref
+
+| Model | PSNR cloud (dB) | SSIM cloud | MAE cloud | SAM cloud (°) | NDVI MAE | Land-cover agree | Sharpness | NIQE ↓ | Unc. ρ |
+|---|---|---|---|---|---|---|---|---|---|
+| M0 Classical temporal fill | 26.50 | 0.283 | 0.0349 | 10.34 | 0.189 | 25.4% | 1.15 | 6.42 |  |
+| M1 U-Net baseline | 34.55 | 0.749 | 0.0129 | 3.30 | 0.060 | 63.8% | 0.67 | 2.63 | 0.14 |
+| M2 MeghGAN (ours) | 33.50 | 0.722 | 0.0150 | 3.69 | 0.063 | 62.0% | 0.67 | 2.77 | 0.13 |
+| M2 MeghGAN w/o spectral loss | 33.82 | 0.733 | 0.0143 | 3.71 | 0.065 | 61.3% | 0.68 | 2.70 | 0.14 |
+| M2 without GAN loss (ablation) | 33.56 | 0.724 | 0.0150 | 3.71 | 0.063 | 62.0% | 0.66 | 2.81 | 0.14 |
+| M2 + Charbonnier loss | 33.59 | 0.725 | 0.0149 | 3.72 | 0.063 | 61.9% | 0.66 | 2.77 | 0.14 |
+| M2 MeghGAN + real-cloud training | 33.09 | 0.715 | 0.0158 | 3.97 | 0.070 | 58.3% | 0.61 | 2.89 | 0.14 |
+| M3 Conditional diffusion | 22.27 | 0.498 | 0.0795 | 10.45 | 0.201 | 39.3% | 1.46 | 2.73 | 0.15 |
+| M3 Diffusion + real-cloud training | 21.98 | 0.493 | 0.0792 | 9.31 | 0.174 | 38.7% | 1.44 | 2.81 | 0.16 |
+
+### liss4 — with_ref
+
+| Model | PSNR cloud (dB) | SSIM cloud | MAE cloud | SAM cloud (°) | NDVI MAE | Land-cover agree | Sharpness | NIQE ↓ | Unc. ρ |
+|---|---|---|---|---|---|---|---|---|---|
+| Do nothing (cloudy input) | 15.60 | 0.475 | 0.1633 | 6.95 | 0.137 | 46.9% | 8.03 | 7.02 |  |
+| M0 Classical temporal fill | 39.15 | 0.947 | 0.0094 | 2.63 | 0.040 | 47.5% | 0.68 | 10.07 |  |
+| M1 U-Net baseline | 39.91 | 0.913 | 0.0074 | 2.26 | 0.040 | 52.5% | 1.63 | 5.16 | 0.39 |
+| M1 U-Net + LISS-IV fine-tune | 39.09 | 0.940 | 0.0082 | 2.41 | 0.044 | 45.4% | 0.83 | 6.86 | 0.43 |
+| M2 MeghGAN (ours) | 40.21 | 0.951 | 0.0077 | 2.13 | 0.030 | 61.9% | 1.12 | 5.66 | 0.26 |
+| M2 MeghGAN w/o spectral loss | 37.29 | 0.944 | 0.0117 | 2.68 | 0.043 | 48.9% | 1.22 | 5.48 | 0.21 |
+| M2 without GAN loss (ablation) | 40.78 | 0.953 | 0.0072 | 2.00 | 0.027 | 64.6% | 1.08 | 5.95 | 0.26 |
+| M2 + Charbonnier loss | 40.32 | 0.951 | 0.0077 | 2.14 | 0.030 | 61.3% | 1.11 | 5.69 | 0.31 |
+| M2 MeghGAN + real-cloud training | 40.22 | 0.956 | 0.0077 | 2.25 | 0.031 | 60.2% | 1.00 | 5.89 | 0.23 |
+| M2 MeghGAN + LISS-IV fine-tune | 42.12 | 0.961 | 0.0062 | 1.86 | 0.029 | 59.4% | 0.70 | 8.44 | 0.33 |
+| M3 Conditional diffusion | 38.32 | 0.894 | 0.0094 | 2.34 | 0.041 | 53.7% | 1.90 | 6.24 | 0.31 |
+| M3 Diffusion + real-cloud training | 37.68 | 0.897 | 0.0104 | 2.80 | 0.050 | 45.6% | 1.81 | 5.87 | 0.21 |
+
+### liss4 — no_ref
+
+| Model | PSNR cloud (dB) | SSIM cloud | MAE cloud | SAM cloud (°) | NDVI MAE | Land-cover agree | Sharpness | NIQE ↓ | Unc. ρ |
+|---|---|---|---|---|---|---|---|---|---|
+| M0 Classical temporal fill | 28.83 | 0.319 | 0.0270 | 7.84 | 0.133 | 33.5% | 8.09 | 9.23 |  |
+| M1 U-Net baseline | 39.91 | 0.913 | 0.0074 | 2.26 | 0.040 | 52.5% | 1.63 | 5.16 | 0.19 |
+| M1 U-Net + LISS-IV fine-tune | 39.09 | 0.940 | 0.0082 | 2.41 | 0.044 | 45.4% | 0.83 | 6.86 | 0.19 |
+| M2 MeghGAN (ours) | 38.22 | 0.898 | 0.0096 | 2.71 | 0.044 | 50.0% | 1.79 | 5.30 | 0.20 |
+| M2 MeghGAN w/o spectral loss | 38.91 | 0.899 | 0.0085 | 2.66 | 0.046 | 52.7% | 1.79 | 5.09 | 0.24 |
+| M2 without GAN loss (ablation) | 38.79 | 0.902 | 0.0089 | 2.59 | 0.042 | 52.0% | 1.77 | 4.91 | 0.27 |
+| M2 + Charbonnier loss | 38.44 | 0.903 | 0.0094 | 2.61 | 0.043 | 53.8% | 1.73 | 5.16 | 0.26 |
+| M2 MeghGAN + real-cloud training | 38.04 | 0.911 | 0.0099 | 2.82 | 0.046 | 46.8% | 1.53 | 5.29 | 0.19 |
+| M2 MeghGAN + LISS-IV fine-tune | 40.24 | 0.932 | 0.0075 | 2.43 | 0.042 | 47.9% | 1.06 | 6.23 | 0.17 |
+| M3 Conditional diffusion | 24.31 | 0.641 | 0.0719 | 11.36 | 0.204 | 47.6% | 5.24 | 5.50 | 0.31 |
+| M3 Diffusion + real-cloud training | 24.27 | 0.634 | 0.0725 | 10.06 | 0.179 | 42.9% | 5.20 | 5.10 | 0.29 |

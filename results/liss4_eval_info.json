@@ -1,0 +1,1 @@
+{"synthetic_cases": 48, "models": ["copy_input", "classical", "unet", "meghgan", "meghgan_real", "meghgan_liss4ft", "meghgan_liss4", "diffusion_real"]}

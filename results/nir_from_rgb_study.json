@@ -1,0 +1,20 @@
+{
+  "dark_quantile": 0.7,
+  "nir_r2_unseen": 0.25702255964279175,
+  "ndvi_r2_unseen": 0.5693110227584839,
+  "ndvi_mae_unseen": 0.08282499760389328,
+  "train_areas": [
+    "guwahati",
+    "majuli",
+    "kaziranga",
+    "shillong",
+    "dimapur",
+    "pasighat",
+    "aizawl"
+  ],
+  "test_areas": [
+    "agartala",
+    "imphal",
+    "silchar"
+  ]
+}

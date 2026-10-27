@@ -1,0 +1,4 @@
+[mask] MaskParams(bright=0.24, soft_width=0.04, flatness=0.7, ndvi_max=0.25, shadow_ratio=0.7, shadow_nir_min=0.03, shadow_reach=150, min_blob=30, buffer=6)
+[mask] unseen areas, cloud       : F1=0.873 P=0.899 R=0.848 false-alarm on clear dates=0.21%
+[mask] unseen areas, shadow      : F1=0.569 P=0.735 R=0.465 false-alarm on clear dates=0.15%
+[mask] unseen areas, cloud+shadow: F1=0.843 P=0.887 R=0.803 false-alarm on clear dates=0.37%

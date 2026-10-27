@@ -1,0 +1,7 @@
+{
+  "niqe_ground_truth": {
+    "test": 2.111,
+    "liss4": 8.161
+  },
+  "note": "NIQE fitted on cloud-free NE-India imagery (train areas); lower = more natural"
+}

@@ -1,0 +1,22 @@
+{
+  "question": "which per-pixel uncertainty predicts MeghGAN's real error? (unseen test areas)",
+  "metric": "unc_spearman = rank correlation; err_ratio = error on least- vs most-confident 20 %",
+  "results": {
+    "MeghGAN test-time-augmentation spread": {
+      "unc_spearman": 0.054,
+      "err_ratio_low_vs_high_conf": 1.126
+    },
+    "diffusion-sample spread": {
+      "unc_spearman": 0.279,
+      "err_ratio_low_vs_high_conf": 1.818
+    },
+    "depth inside cloud": {
+      "unc_spearman": 0.276,
+      "err_ratio_low_vs_high_conf": 1.843
+    },
+    "deployed: diffusion spread x depth": {
+      "unc_spearman": 0.317,
+      "err_ratio_low_vs_high_conf": 2.037
+    }
+  }
+}

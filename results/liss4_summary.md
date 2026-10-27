@@ -1,0 +1,27 @@
+Real LISS-IV (Bhoonidhi, Resourcesat-2/2A), east test area never used for training.
+
+### A synthetic (48 cases)
+
+| Model | PSNR cloud | SSIM | MAE | SAM ° | NDVI MAE | Land-cover | Sharpness | NIQE ↓ |
+|---|---|---|---|---|---|---|---|---|
+| Do nothing | 13.87 | 0.508 | 0.2037 | 9.66 | 0.186 | 30.3% | 1.01 | 5.72 |
+| M0 Classical temporal fill | 30.07 | 0.711 | 0.0234 | 6.28 | 0.118 | 40.0% | 0.73 | 4.53 |
+| M1 U-Net baseline | 31.27 | 0.805 | 0.0198 | 5.32 | 0.100 | 51.0% | 0.75 | 4.31 |
+| M2 MeghGAN (ours) | 32.22 | 0.803 | 0.0178 | 4.55 | 0.082 | 56.6% | 0.86 | 4.64 |
+| M2 MeghGAN + real-cloud training (Sentinel-2 default) | 31.08 | 0.777 | 0.0212 | 5.74 | 0.098 | 51.7% | 0.82 | 4.56 |
+| M2 + LISS-IV fine-tune (2 demo patches) | 31.02 | 0.768 | 0.0212 | 5.54 | 0.102 | 44.7% | 0.69 | 4.69 |
+| M2 + real LISS-IV (Bhoonidhi) training | 32.57 | 0.813 | 0.0168 | 4.51 | 0.083 | 55.1% | 0.74 | 4.76 |
+| M3 Diffusion + real-cloud training | 30.67 | 0.742 | 0.0212 | 5.90 | 0.110 | 42.5% | 0.86 | 5.30 |
+
+### B real cloud (13 cases)
+
+| Model | PSNR cloud | SSIM | MAE | SAM ° | NDVI MAE | Land-cover | Sharpness | NIQE ↓ |
+|---|---|---|---|---|---|---|---|---|
+| Do nothing | 27.42 | 0.778 | 0.0340 | 3.97 | 0.062 | 51.5% | 1.75 | 8.64 |
+| M0 Classical temporal fill | 30.58 | 0.803 | 0.0219 | 5.28 | 0.101 | 30.6% | 1.67 | 5.45 |
+| M1 U-Net baseline | 26.61 | 0.678 | 0.0394 | 6.67 | 0.114 | 43.3% | 2.95 | 6.97 |
+| M2 MeghGAN (ours) | 29.24 | 0.733 | 0.0277 | 5.26 | 0.098 | 47.8% | 2.49 | 6.24 |
+| M2 MeghGAN + real-cloud training (Sentinel-2 default) | 32.01 | 0.824 | 0.0194 | 4.12 | 0.073 | 46.0% | 1.66 | 6.44 |
+| M2 + LISS-IV fine-tune (2 demo patches) | 29.69 | 0.813 | 0.0279 | 5.05 | 0.088 | 42.0% | 1.62 | 6.20 |
+| M2 + real LISS-IV (Bhoonidhi) training | 33.54 | 0.860 | 0.0160 | 3.81 | 0.071 | 43.4% | 1.22 | 6.58 |
+| M3 Diffusion + real-cloud training | 31.24 | 0.798 | 0.0194 | 4.98 | 0.094 | 34.6% | 1.92 | 6.78 |

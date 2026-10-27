@@ -1,0 +1,53 @@
+{
+  "reference_A": {
+    "reference_item": "S2B_45RXH_20250319_0_L2A",
+    "reference_date": "2025-03-19",
+    "reference_bad_fraction": 6.103515625e-05
+  },
+  "A_liss4_scene_S2ref": {
+    "cloud": 0.9834022521972656,
+    "shadow": 0.016597747802734375,
+    "reference": true,
+    "mean_conf_reconstructed": 0.4605550467967987
+  },
+  "B_liss4_patch_noref": {
+    "cloud": 0.5402984619140625,
+    "shadow": 0.078582763671875,
+    "reference": false,
+    "mean_conf_reconstructed": 0.5421426892280579
+  },
+  "C_agartala_2024-11-01": {
+    "cloud": 0.5478315353393555,
+    "shadow": 0.17951202392578125,
+    "reference": true,
+    "mean_conf_reconstructed": 0.5911347270011902,
+    "mask_iou_vs_SCL": 0.6722319311473366
+  },
+  "C_agartala_2025-03-31": {
+    "cloud": 0.36749744415283203,
+    "shadow": 0.14988422393798828,
+    "reference": true,
+    "mean_conf_reconstructed": 0.6129446625709534,
+    "mask_iou_vs_SCL": 0.8195988668660144
+  },
+  "C_imphal_2025-04-07": {
+    "cloud": 0.6020393371582031,
+    "shadow": 0.11111640930175781,
+    "reference": true,
+    "mean_conf_reconstructed": 0.5975466370582581,
+    "mask_iou_vs_SCL": 0.659879664809955
+  },
+  "C_imphal_2025-01-07": {
+    "cloud": 0.5406856536865234,
+    "shadow": 0.2518653869628906,
+    "reference": true,
+    "mean_conf_reconstructed": 0.573357880115509,
+    "mask_iou_vs_SCL": 0.705889490287933
+  },
+  "D_s2_30m": {
+    "cloud": 0.053886156064098606,
+    "shadow": 0.004180429806009046,
+    "reference": true,
+    "mean_conf_reconstructed": 0.6710771322250366
+  }
+}

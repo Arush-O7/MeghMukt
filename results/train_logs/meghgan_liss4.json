@@ -1,0 +1,15 @@
+{
+  "tag": "meghgan_liss4",
+  "model": "meghgan",
+  "steps": 2500,
+  "best_val_psnr_cloud": 36.75937064488729,
+  "minutes": 21.0,
+  "device": "mps",
+  "lambdas": {
+    "l1": 10.0,
+    "ssim": 2.0,
+    "sam": 10.0,
+    "ndvi": 1.0,
+    "adv": 0.1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "tag": "unet_liss4ft",
+  "model": "unet",
+  "steps": 800,
+  "best_val_psnr_cloud": 31.359756151835125,
+  "minutes": 4.4,
+  "device": "mps",
+  "lambdas": {
+    "l1": 10.0,
+    "ssim": 2.0
+  }
+}
