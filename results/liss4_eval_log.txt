@@ -1,104 +1,10 @@
 models: ['copy_input', 'classical', 'unet', 'meghgan', 'meghgan_real', 'meghgan_liss4ft', 'meghgan_liss4', 'diffusion_real']
 cases: 48 synthetic, 13 real-cloud
   1/61
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
   11/61
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
   21/61
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
   31/61
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
   41/61
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
   51/61
   61/61
 Real LISS-IV (Bhoonidhi, Resourcesat-2/2A), east test area never used for training.

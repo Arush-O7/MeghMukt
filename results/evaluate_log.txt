@@ -1,9 +1,3 @@
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
 models: ['copy_input', 'classical', 'unet', 'unet_liss4ft', 'meghgan', 'meghgan_nospectral', 'meghgan_noadv', 'meghgan_charb', 'meghgan_real', 'meghgan_liss4ft', 'diffusion', 'diffusion_real']
 test   with_ref copy_input           PSNR cloud  15.12 dB  SSIM cloud 0.349  SAM cloud  5.77°
 test   with_ref classical            PSNR cloud  35.00 dB  SSIM cloud 0.865  SAM cloud  3.36°
@@ -23,24 +17,8 @@ test   no_ref   meghgan_nospectral   PSNR cloud  33.82 dB  SSIM cloud 0.733  SAM
 test   no_ref   meghgan_noadv        PSNR cloud  33.56 dB  SSIM cloud 0.724  SAM cloud  3.71°
 test   no_ref   meghgan_charb        PSNR cloud  33.59 dB  SSIM cloud 0.725  SAM cloud  3.72°
 test   no_ref   meghgan_real         PSNR cloud  33.09 dB  SSIM cloud 0.715  SAM cloud  3.97°
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
 test   no_ref   diffusion            PSNR cloud  22.27 dB  SSIM cloud 0.498  SAM cloud 10.45°
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
 test   no_ref   diffusion_real       PSNR cloud  21.98 dB  SSIM cloud 0.493  SAM cloud  9.31°
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
 liss4  with_ref copy_input           PSNR cloud  15.60 dB  SSIM cloud 0.475  SAM cloud  6.95°
 liss4  with_ref classical            PSNR cloud  39.15 dB  SSIM cloud 0.947  SAM cloud  2.63°
 liss4  with_ref unet                 PSNR cloud  39.91 dB  SSIM cloud 0.913  SAM cloud  2.26°
@@ -62,17 +40,7 @@ liss4  no_ref   meghgan_noadv        PSNR cloud  38.79 dB  SSIM cloud 0.902  SAM
 liss4  no_ref   meghgan_charb        PSNR cloud  38.44 dB  SSIM cloud 0.903  SAM cloud  2.61°
 liss4  no_ref   meghgan_real         PSNR cloud  38.04 dB  SSIM cloud 0.911  SAM cloud  2.82°
 liss4  no_ref   meghgan_liss4ft      PSNR cloud  40.24 dB  SSIM cloud 0.932  SAM cloud  2.43°
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar divide
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
 liss4  no_ref   diffusion            PSNR cloud  24.31 dB  SSIM cloud 0.641  SAM cloud 11.36°
-meghmukt/perception.py:54: RuntimeWarning: divide by zero encountered in scalar divide
-  gh = sl / sr
-meghmukt/perception.py:56: RuntimeWarning: invalid value encountered in scalar multiply
-  rn = rh * (gh ** 3 + 1) * (gh + 1) / (gh ** 2 + 1) ** 2
 liss4  no_ref   diffusion_real       PSNR cloud  24.27 dB  SSIM cloud 0.634  SAM cloud 10.06°
 
 ### test — with_ref
@@ -137,4 +105,3 @@ liss4  no_ref   diffusion_real       PSNR cloud  24.27 dB  SSIM cloud 0.634  SAM
 | M3 Conditional diffusion | 24.31 | 0.641 | 0.0719 | 11.36 | 0.204 | 47.6% | 5.24 | 5.50 | 0.31 |
 | M3 Diffusion + real-cloud training | 24.27 | 0.634 | 0.0725 | 10.06 | 0.179 | 42.9% | 5.20 | 5.10 | 0.29 |
 
-figures -> results/figures

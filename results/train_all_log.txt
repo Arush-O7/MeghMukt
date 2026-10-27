@@ -15,7 +15,6 @@ step   4329  loss 0.4381  val PSNR(cloud) 32.49 dB  25.7 min
 step   4662  loss 0.4354  val PSNR(cloud) 32.59 dB  27.5 min  *saved*
 step   4995  loss 0.4319  val PSNR(cloud) 32.58 dB  29.4 min
 step   5000  loss 0.4319  val PSNR(cloud) 32.58 dB  29.5 min
-Done. best val PSNR(cloud) = 32.59 dB -> checkpoints/unet.pt
 Training meghgan on mps for 6000 steps (val every 400) ...
 step    400  loss 4.8006  val PSNR(cloud) -0.32 dB  3.3 min  *saved*
 /Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:324: UserWarning: resource_tracker: There appear to be 20 leaked semaphore objects to clean up at shutdown: {'/loky-16679-dsr4gz4d', '/loky-16679-1lgob1jk', '/loky-16679-t1gksp_d', '/loky-16679-8apxyjov', '/loky-16679-dfvj_7kg', '/loky-16679-uyjtjqsk', '/loky-16679-vcfuc4ld', '/loky-16679-_w7et392', '/loky-16679-l8a75igz', '/loky-16679-8bbi1aea', '/loky-16679-jag9n7jc', '/loky-16679-2b2jczwc', '/loky-16679-zcfbee4j', '/loky-16679-k7y1zii4', '/loky-16679-8kak9tea', '/loky-16679-mlwnszm8', '/loky-16679-coup6ta9', '/loky-16679-hzl2_lbt', '/loky-16679-khzd06pl', '/loky-16679-zsv4xs1u'}
@@ -37,7 +36,6 @@ step   4800  loss 0.4415  val PSNR(cloud) 36.06 dB  37.8 min  *saved*
 step   5200  loss 0.4379  val PSNR(cloud) 35.85 dB  40.9 min
 step   5600  loss 0.4292  val PSNR(cloud) 35.93 dB  43.9 min
 step   6000  loss 0.4219  val PSNR(cloud) 35.97 dB  47.0 min
-Done. best val PSNR(cloud) = 36.06 dB -> checkpoints/meghgan.pt
 Training meghgan_nospectral on mps for 6000 steps (val every 400) ...
 step    400  loss 1.3075  val PSNR(cloud) 29.88 dB  3.6 min  *saved*
 step    800  loss 0.5303  val PSNR(cloud) 33.64 dB  7.1 min  *saved*
@@ -64,7 +62,6 @@ step   4800  loss 0.4530  val PSNR(cloud) 35.42 dB  36.9 min  *saved*
 step   5200  loss 0.4487  val PSNR(cloud) 35.38 dB  40.0 min
 step   5600  loss 0.4469  val PSNR(cloud) 35.38 dB  43.1 min
 step   6000  loss 0.4397  val PSNR(cloud) 35.36 dB  46.2 min
-Done. best val PSNR(cloud) = 35.42 dB -> checkpoints/meghgan.pt
 Training meghgan_nospectral on mps for 6000 steps (val every 400) ...
 step    400  loss 0.7379  val PSNR(cloud) 33.16 dB  3.4 min  *saved*
 step    800  loss 0.4767  val PSNR(cloud) 33.28 dB  6.4 min  *saved*
@@ -81,7 +78,6 @@ step   4800  loss 0.3496  val PSNR(cloud) 35.85 dB  207.8 min  *saved*
 step   5200  loss 0.3480  val PSNR(cloud) 35.88 dB  211.7 min  *saved*
 step   5600  loss 0.3465  val PSNR(cloud) 35.91 dB  215.8 min  *saved*
 step   6000  loss 0.3418  val PSNR(cloud) 35.87 dB  219.3 min
-Done. best val PSNR(cloud) = 35.91 dB -> checkpoints/meghgan_nospectral.pt
 Training diffusion on mps for 10000 steps (val every 666) ...
 step    666  loss 1.8296  val PSNR(cloud) 21.10 dB  3.2 min  *saved*
 step   1332  loss 0.2898  val PSNR(cloud) 23.30 dB  6.6 min  *saved*
@@ -121,7 +117,6 @@ step   8658  loss 0.2847  val PSNR(cloud) 32.44 dB  46.5 min
 step   9324  loss 0.2785  val PSNR(cloud) 32.54 dB  49.9 min
 step   9990  loss 0.2744  val PSNR(cloud) 32.53 dB  53.2 min
 step  10000  loss 0.2718  val PSNR(cloud) 32.62 dB  53.3 min
-Done. best val PSNR(cloud) = 32.89 dB -> checkpoints/diffusion.pt
 Training meghgan_liss4ft on mps for 800 steps (val every 53) ...
 step     53  loss 0.2699  val PSNR(cloud) 34.68 dB  0.5 min  *saved*
 step    106  loss 0.2335  val PSNR(cloud) 34.79 dB  0.9 min  *saved*
@@ -139,7 +134,6 @@ step    689  loss 0.1994  val PSNR(cloud) 34.42 dB  5.8 min  *saved*
 step    742  loss 0.2007  val PSNR(cloud) 34.36 dB  6.2 min  *saved*
 step    795  loss 0.1985  val PSNR(cloud) 34.36 dB  6.7 min  *saved*
 step    800  loss 0.1978  val PSNR(cloud) 34.36 dB  6.7 min  *saved*
-Done. best val PSNR(cloud) = 34.36 dB -> checkpoints/meghgan_liss4ft.pt
 Training unet_liss4ft on mps for 800 steps (val every 53) ...
 step     53  loss 0.1637  val PSNR(cloud) 31.81 dB  0.4 min  *saved*
 step    106  loss 0.1500  val PSNR(cloud) 31.56 dB  0.7 min  *saved*
@@ -157,7 +151,6 @@ step    689  loss 0.1258  val PSNR(cloud) 31.34 dB  3.8 min  *saved*
 step    742  loss 0.1244  val PSNR(cloud) 31.35 dB  4.1 min  *saved*
 step    795  loss 0.1249  val PSNR(cloud) 31.36 dB  4.4 min  *saved*
 step    800  loss 0.1313  val PSNR(cloud) 31.36 dB  4.4 min  *saved*
-Done. best val PSNR(cloud) = 31.36 dB -> checkpoints/unet_liss4ft.pt
 ALL TRAINING DONE
 === E4 Mon Oct 19 16:15:51 IST 2026 ===
 Training meghgan_noadv on mps for 6000 steps (val every 400) ...
@@ -176,7 +169,6 @@ step   4800  loss 0.4122  val PSNR(cloud) 34.84 dB  29.2 min
 step   5200  loss 0.4167  val PSNR(cloud) 34.94 dB  31.7 min
 step   5600  loss 0.4089  val PSNR(cloud) 34.80 dB  34.2 min
 step   6000  loss 0.4072  val PSNR(cloud) 34.91 dB  36.9 min
-Done. best val PSNR(cloud) = 35.01 dB -> checkpoints/meghgan_noadv.pt
 Training meghgan_charb on mps for 6000 steps (val every 400) ...
 step    400  loss 0.9317  val PSNR(cloud) 33.08 dB  3.3 min  *saved*
 step    800  loss 0.6577  val PSNR(cloud) 33.87 dB  6.7 min  *saved*
@@ -193,7 +185,6 @@ step   4800  loss 0.4522  val PSNR(cloud) 35.01 dB  40.6 min  *saved*
 step   5200  loss 0.4493  val PSNR(cloud) 35.08 dB  44.0 min  *saved*
 step   5600  loss 0.4471  val PSNR(cloud) 34.98 dB  47.4 min
 step   6000  loss 0.4403  val PSNR(cloud) 34.95 dB  50.8 min
-Done. best val PSNR(cloud) = 35.08 dB -> checkpoints/meghgan_charb.pt
 E4 TRAINING DONE
 === real-cloud fine-tune Mon Oct 19 22:48:50 IST 2026 ===
 [real] training areas
@@ -240,7 +231,6 @@ step   2158  loss 0.5105  val PSNR(cloud) 34.81 dB  15.4 min
 step   2324  loss 0.5105  val PSNR(cloud) 34.96 dB  16.6 min
 step   2490  loss 0.5148  val PSNR(cloud) 35.00 dB  17.9 min
 step   2500  loss 0.5206  val PSNR(cloud) 35.00 dB  18.0 min
-Done. best val PSNR(cloud) = 35.33 dB -> checkpoints/meghgan_real.pt
 Training diffusion_real on mps for 2500 steps (val every 166) ...
 step    166  loss 0.3942  val PSNR(cloud) 31.44 dB  0.9 min  *saved*
 step    332  loss 0.3940  val PSNR(cloud) 32.19 dB  1.6 min  *saved*
@@ -258,8 +248,6 @@ step   2158  loss 0.3251  val PSNR(cloud) 32.94 dB  10.5 min
 step   2324  loss 0.3098  val PSNR(cloud) 33.03 dB  11.3 min
 step   2490  loss 0.3091  val PSNR(cloud) 33.05 dB  12.1 min
 step   2500  loss 0.3349  val PSNR(cloud) 32.88 dB  12.2 min
-Done. best val PSNR(cloud) = 33.34 dB -> checkpoints/diffusion_real.pt
-figures -> results/figures
 REAL-CLOUD PIPELINE DONE
 === LISS-IV fine-tune Tue Oct 20 14:32:25 IST 2026 ===
 Training meghgan_liss4 on mps for 2500 steps (val every 166) ...
@@ -279,4 +267,3 @@ step   2158  loss 0.4699  val PSNR(cloud) 36.76 dB  18.1 min
 step   2324  loss 0.4718  val PSNR(cloud) 36.73 dB  19.5 min
 step   2490  loss 0.4710  val PSNR(cloud) 36.74 dB  20.9 min
 step   2500  loss 0.4630  val PSNR(cloud) 36.74 dB  21.0 min
-Done. best val PSNR(cloud) = 36.76 dB -> checkpoints/meghgan_liss4.pt
