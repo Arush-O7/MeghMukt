@@ -1,0 +1,54 @@
+paths:
+  raw: data/raw
+  processed: data/processed
+  checkpoints: checkpoints
+  results: results
+  liss4_samples: data/external/liss4_samples
+  s2_30m: data/external/s2_30m
+
+bands: [green, red, nir]
+
+sentinel2:
+  stac_url: https://earth-search.aws.element84.com/v1/search
+  collection: sentinel-2-l2a
+  chip_size_px: 1024
+  date_range: 2023-10-01T00:00:00Z/2025-04-30T23:59:59Z
+  clear_dates_per_aoi: 3
+  cloudy_dates_per_aoi: 2
+  aois:
+    guwahati:  {lon: 91.60, lat: 26.12, terrain: "urban + Brahmaputra river"}
+    majuli:    {lon: 94.20, lat: 26.95, terrain: "river island, wetlands"}
+    kaziranga: {lon: 93.35, lat: 26.62, terrain: "grassland, forest, river"}
+    shillong:  {lon: 91.88, lat: 25.57, terrain: "hilly plateau"}
+    dimapur:   {lon: 93.73, lat: 25.90, terrain: "foothill plain"}
+    pasighat:  {lon: 95.33, lat: 28.07, terrain: "Himalayan foothills"}
+    aizawl:    {lon: 92.72, lat: 23.73, terrain: "steep forested hills"}
+    silchar:   {lon: 92.80, lat: 24.82, terrain: "Barak valley farmland"}
+    agartala:  {lon: 91.28, lat: 23.83, terrain: "town + paddy fields"}
+    imphal:    {lon: 93.94, lat: 24.80, terrain: "valley, Loktak side"}
+
+split:
+  train: [guwahati, majuli, kaziranga, shillong, dimapur, pasighat, aizawl]
+  val:   [silchar]
+  test:  [agartala, imphal]
+
+data:
+  patch_size: 128
+  cloud_cover_range: [0.15, 0.70]
+  shadow_prob: 0.7
+  reference_dropout: 0.3
+
+train:
+  device: auto
+  batch_size: 16
+  lr: 2.0e-4
+  seed: 42
+  unet:      {steps: 5000}
+  meghgan:   {steps: 6000, lambda_l1: 10.0, lambda_ssim: 2.0, lambda_sam: 10.0, lambda_ndvi: 1.0, lambda_adv: 0.1}
+  diffusion: {steps: 10000, timesteps: 1000, sample_steps: 20}
+  finetune:  {steps: 800, lr: 5.0e-5}
+
+inference:
+  tile: 256
+  overlap: 64
+  tta: true
