@@ -7,7 +7,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
-from torch.utils.data import DataLoader
+from torch.utils.data import ConcatDataset, DataLoader
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from meghmukt import losses as L
@@ -29,6 +29,7 @@ def make_sources(cfg, finetune):
 
 @torch.no_grad()
 def validate(model, name, loader, norm, device, max_batches=6):
+    max_batches = len(loader) if isinstance(loader.dataset, ConcatDataset) else max_batches
     model.eval()
     scores = []
     for i, batch in enumerate(loader):
@@ -56,6 +57,7 @@ def main():
     ap.add_argument("--finetune", help="checkpoint to fine-tune on real LISS-IV")
     ap.add_argument("--real-finetune", help="checkpoint to fine-tune on real-cloud Sentinel-2 pairs (+ synthetic)")
     ap.add_argument("--liss4", help="checkpoint to fine-tune on real Bhoonidhi LISS-IV (+ Sentinel-2 to keep)")
+    ap.add_argument("--unified", help="checkpoint to train into one model for both sensors, with mask/reference noise")
     args = ap.parse_args()
 
     cfg = load_config()
@@ -64,11 +66,11 @@ def main():
     torch.manual_seed(tc["seed"]), np.random.seed(tc["seed"])
     device = get_device(tc["device"])
     tag = args.tag or (args.model + ("_liss4ft" if args.finetune else "_real" if args.real_finetune
-                                     else "_liss4" if args.liss4 else ""))
-    steps = args.steps or (tc["finetune"]["steps"] if args.finetune else 2500 if (args.real_finetune or args.liss4)
-                           else tc[args.model]["steps"])
-    lr = tc["finetune"]["lr"] if args.finetune else 1e-4 if (args.real_finetune or args.liss4) else tc["lr"]
-    init = args.finetune or args.real_finetune or args.liss4
+                                     else "_liss4" if args.liss4 else "_unified" if args.unified else ""))
+    steps = args.steps or (tc["finetune"]["steps"] if args.finetune else 5000 if args.unified
+                           else 2500 if (args.real_finetune or args.liss4) else tc[args.model]["steps"])
+    lr = tc["finetune"]["lr"] if args.finetune else 1e-4 if (args.real_finetune or args.liss4 or args.unified) else tc["lr"]
+    init = args.finetune or args.real_finetune or args.liss4 or args.unified
 
     norm = Normaliser.load(P["processed"] / "norm.json")
     synth = CloudSynthesiser(np.load(P["processed"] / "cloud_spectra.npy"), tuple(cfg["data"]["cloud_cover_range"]),
@@ -92,9 +94,24 @@ def main():
         train_ds = MultiMix([(liss_syn, 0.35), (liss_real, 0.30), (train_ds, 0.20), (s2_real, 0.15)],
                             length=steps * tc["batch_size"], seed=tc["seed"])
         val_ds = FixedSet(P["processed"] / "eval_liss4_val.npz")
+    elif args.unified:
+        rd, seed = cfg["data"]["reference_dropout"], tc["seed"]
+        lc = np.load(P["processed"] / "liss4_clear_train.npz")
+        parts = [
+            (SyntheticCloudDataset([{"clear": lc[k]} for k in lc.files], norm, synth, cfg["data"]["patch_size"],
+                                   ref_dropout=rd, seed=seed + 1, robust=True), 0.30),
+            (RealPairDataset(P["processed"] / "realpairs_liss4_train.npz", norm, cfg["data"]["patch_size"],
+                             ref_dropout=rd, seed=seed + 2, robust=True), 0.25),
+            (SyntheticCloudDataset(make_sources(cfg, False), norm, synth, cfg["data"]["patch_size"],
+                                   ref_dropout=rd, seed=seed + 3, robust=True), 0.25),
+            (RealPairDataset(P["processed"] / "realpairs_train.npz", norm, cfg["data"]["patch_size"],
+                             ref_dropout=rd, seed=seed + 4, robust=True), 0.20)]
+        train_ds = MultiMix(parts, length=steps * tc["batch_size"], seed=seed)
+        val_ds = ConcatDataset([FixedSet(P["processed"] / "eval_liss4_val.npz", with_valid=True, rematch=norm),
+                                FixedSet(P["processed"] / "eval_real_val.npz", with_valid=True, rematch=norm)])
     else:
         val_ds = FixedSet(P["processed"] / "eval_val.npz")
-    loader = DataLoader(train_ds, tc["batch_size"], num_workers=3 if args.liss4 else 4, persistent_workers=True,
+    loader = DataLoader(train_ds, tc["batch_size"], num_workers=3 if (args.liss4 or args.unified) else 4, persistent_workers=True,
                         drop_last=True)
     val_loader = DataLoader(val_ds, 16, shuffle=False)
 
@@ -161,8 +178,8 @@ def main():
                 best, flag = v, "  *saved*"
                 save_checkpoint(ckpt, model, args.model, norm.to_dict(),
                                 {"tag": tag, "step": step, "val_psnr_cloud": v, "lambdas": lam,
-                                 "finetuned_from": init, "real_clouds": bool(args.real_finetune or args.liss4),
-                                 "liss4": bool(args.liss4),
+                                 "finetuned_from": init, "real_clouds": bool(args.real_finetune or args.liss4 or args.unified),
+                                 "liss4": bool(args.liss4), "unified": bool(args.unified),
                                  "charbonnier": args.charbonnier})
             print(f"step {step:6d}  loss {np.mean(run):.4f}  val PSNR(cloud) {v:.2f} dB  "
                   f"{(time.time() - t0) / 60:.1f} min{flag}", flush=True)

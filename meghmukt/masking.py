@@ -152,13 +152,33 @@ def detect_deep(x: np.ndarray, pixel_m: float = 10.0, buffer: int = 3) -> tuple[
     return mask, cloud_p
 
 
-def detect_auto(x: np.ndarray, method: str = "deep", pixel_m: float = 10.0, params: MaskParams | None = None):
-    if method == "deep":
+def calibrated_params() -> MaskParams:
+    import json
+    from pathlib import Path
+    f = Path(__file__).resolve().parents[1] / "data" / "processed" / "mask_params.json"
+    return MaskParams(**json.loads(f.read_text())["params"]) if f.exists() else MaskParams()
+
+
+def combine_masks(a: np.ndarray, b: np.ndarray) -> np.ndarray:
+    cloud = (a == CLOUD) | (b == CLOUD)
+    out = np.zeros_like(a)
+    out[((a == SHADOW) | (b == SHADOW)) & ~cloud] = SHADOW
+    out[cloud] = CLOUD
+    return out
+
+
+def detect_auto(x: np.ndarray, method: str = "hybrid", pixel_m: float = 10.0, params: MaskParams | None = None):
+    params = params or calibrated_params()
+    if method in ("deep", "hybrid"):
         try:
-            return detect_deep(x, pixel_m)
+            deep, prob = detect_deep(x, pixel_m)
         except ImportError:
-            pass
-    return detect(x, params or MaskParams())
+            return detect(x, params)
+        if method == "deep":
+            return deep, prob
+        rules, rprob = detect(x, params)
+        return combine_masks(deep, rules), np.maximum(prob, rprob)
+    return detect(x, params)
 
 
 def pixel_size(profile: dict | None, default: float = 5.0) -> float:

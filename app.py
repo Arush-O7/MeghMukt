@@ -16,7 +16,7 @@ from rasterio.transform import from_origin
 
 from meghmukt.dataset import Normaliser
 from meghmukt.inference import export_analysis_ready, reconstruct_scene
-from meghmukt.io import Harmoniser, display_limits, get_device, load_config, read_raster, to_display
+from meghmukt.io import Harmoniser, display_limits, get_device, load_config, read_raster, reproject_to, to_display
 from meghmukt.live import (PLACES, chip_cloud, chip_profile, geocode, locate_picture, read_chip, reference_and_check,
                            search_cloudy)
 from meghmukt.masking import coverage, detect_auto, pixel_size
@@ -266,7 +266,7 @@ def _fetch(key, _profile):
 
 @st.cache_data(show_spinner="Detecting clouds ...")
 def _mask(key, _img, px):
-    return detect_auto(_img, "deep", px)[0]
+    return detect_auto(_img, "hybrid", px)[0]
 
 
 def pick_place(key, default="Shillong"):
@@ -358,12 +358,34 @@ else:
             pic_layout = "fcc"
         meta = f"<b>{up.name}</b> · ordinary picture · no map position"
     else:
-        sensor = st.sidebar.radio("Satellite", ["liss4", "s2"], horizontal=True,
+        is_s2 = any(s in up.name.lower() for s in ("sentinel", "s2_", "_s2"))
+        sensor = st.sidebar.radio("Satellite", ["liss4", "s2"], horizontal=True, index=int(is_s2),
                                   format_func=lambda v: {"liss4": "LISS-IV", "s2": "Sentinel-2"}[v])
         bands = [3, 4, 8] if sensor == "s2" and arr.shape[0] >= 8 else [1, 2, 3]
         img = to_liss4_scale(arr[[b - 1 for b in bands]], sensor, harm)
         georef = profile.get("crs") is not None
         meta = f"<b>{up.name}</b> · {'Sentinel-2' if sensor == 's2' else 'LISS-IV'}" + (" · georeferenced" if georef else "")
+        with st.sidebar.expander("Optional: own reference / original image"):
+            up_ref = st.file_uploader("Reference image (older clear pass of the same place)", type=["tif", "tiff"])
+            up_gt = st.file_uploader("Original clear image (to score the result)", type=["tif", "tiff"])
+        for kind, extra in (("ref", up_ref), ("gt", up_gt)):
+            if extra is None:
+                continue
+            with tempfile.NamedTemporaryFile(suffix=".tif", delete=False) as f:
+                f.write(extra.getvalue())
+            ea, ep = read_raster(f.name)
+            ea = ea[[b - 1 for b in bands]] if ea.shape[0] >= max(bands) else ea[:3]
+            if georef and ep.get("crs") is not None and (ep["crs"], ep["transform"], ep["width"], ep["height"]) != (
+                    profile["crs"], profile["transform"], profile["width"], profile["height"]):
+                ea = np.nan_to_num(reproject_to(ea, ep, profile))
+            if ea.shape[1:] != img.shape[1:]:
+                side_note(f"<b>{extra.name}</b> does not cover the same area, so it is not used.")
+                continue
+            ea = to_liss4_scale(ea, sensor, harm)
+            if kind == "ref":
+                ref, ref_text = ea, f"uploaded ({extra.name})"
+            else:
+                gt, gt_text = ea, f"original clear image ({extra.name})"
 
 if pic_bytes is not None:
     if WEB_CAL is None:

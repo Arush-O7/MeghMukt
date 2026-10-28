@@ -14,8 +14,10 @@ MODEL_NAMES = {"classical": "M0 Classical temporal fill", "unet": "M1 U-Net base
                "meghgan": "M2 MeghGAN (ours)", "diffusion": "M3 Conditional diffusion",
                "meghgan_real": "M2 MeghGAN + real-cloud training (Sentinel-2 default)",
                "meghgan_liss4": "M2 MeghGAN + real LISS-IV training (LISS-IV default)",
-               "diffusion_real": "M3 Diffusion + real-cloud training"}
-DEFAULT_MODEL, DEFAULT_MODEL_S2, CONFIDENCE_MODEL = "meghgan_liss4", "meghgan_real", "diffusion_real"
+               "diffusion_real": "M3 Diffusion + real-cloud training",
+               "meghgan_unified": "M2 MeghGAN trained on both sensors with mask/reference noise",
+               "meghgan_opt": "M2 MeghGAN optimised (default for both sensors)"}
+DEFAULT_MODEL, DEFAULT_MODEL_S2, CONFIDENCE_MODEL = "meghgan_opt", "meghgan_opt", "diffusion_real"
 
 
 def default_model(sensor: str = "liss4") -> str:

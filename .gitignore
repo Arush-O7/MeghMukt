@@ -16,5 +16,6 @@ checkpoints/*
 !checkpoints/meghgan_real.pt
 !checkpoints/diffusion_real.pt
 !checkpoints/unet.pt
+!checkpoints/meghgan_opt.pt
 
 results/scenes/

@@ -43,6 +43,22 @@ Real clouds on 13 LISS-IV images of Guwahati (11 May 2024), checked against the 
 On simulated clouds over Sentinel-2 test areas, using the reference adds about 4.4 dB for MeghGAN.
 Full tables are in `results/`, and the plots in `results/figures/`.
 
+### Later update: one optimised model
+
+After the review we looked at why results were worse on images the models had not seen. Three things
+helped: combining the deep cloud mask with the rule-based one (the deep mask alone missed a lot of
+cloud on some images), matching the reference colours locally around each cloud instead of once for
+the whole image, and training with slightly wrong masks and shifted references. The new model
+(`checkpoints/meghgan_opt.pt`, the average of the `meghgan_liss4` weights and the weights after
+`--unified` training) is now used for both LISS-IV and Sentinel-2.
+
+| PSNR on cloudy area (dB) | LISS-IV real | LISS-IV simulated | Sentinel-2 real | Sentinel-2 simulated |
+|---|---|---|---|---|
+| MeghGAN before | 33.54 | 33.34 | 32.25 | 36.28 |
+| MeghGAN after | 34.22 | 33.59 | 32.57 | 36.43 |
+
+Details in `results/optimisation_summary.md`.
+
 ## Running it
 
 Python 3.10+ should work (we used 3.13 on a MacBook Air M4).
@@ -57,7 +73,8 @@ downloads the OmniCloudMask weights, so it needs internet.
 
 In the dashboard you can:
 - search any place in North-East India in the live Sentinel-2 archive and clean a cloudy pass,
-- upload your own GeoTIFF or even an ordinary JPG/PNG picture,
+- upload your own GeoTIFF or even an ordinary JPG/PNG picture (you can also add your own reference
+  image, and the original clear image if you have it, to get PSNR/SSIM/SAM for the result),
 - run all four models on the same image and compare them,
 - look at the evaluation tables and figures.
 
@@ -92,6 +109,7 @@ bash scripts/train_real.sh
 python scripts/13_prepare_liss4.py
 python scripts/14_prepare_liss4_training.py
 python scripts/03_train.py --model meghgan --liss4 checkpoints/meghgan_real.pt
+python scripts/03_train.py --model meghgan --unified checkpoints/meghgan_liss4.pt
 python scripts/15_eval_liss4.py
 python scripts/07_make_figures.py
 ```
