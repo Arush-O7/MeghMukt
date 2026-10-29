@@ -19,3 +19,6 @@ checkpoints/*
 !checkpoints/meghgan_opt.pt
 
 results/scenes/
+
+MeghMukt_Test_Images/Test1_*
+MeghMukt_Test_Images/Test2_*

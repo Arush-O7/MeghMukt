@@ -1,0 +1,49 @@
+MeghMukt - demo images for "Upload my image"
+==============================================
+
+Open the dashboard (double-click run_demo.command in the MeghMukt folder),
+then in the sidebar choose  Step 1 -> "Upload my image"  and drag one file in.
+Keep the internet on: the clear reference image is fetched automatically.
+
+
+A. Satellite images with real clouds (best for the demo)
+   1_Sentinel-2_Itanagar_real_cloud_2024-07-31.tif   (about 46% cloud + shadows)
+   2_Sentinel-2_Kohima_real_cloud_2023-12-14.tif     (about 44% cloud + 20% shadow)
+   3_Sentinel-2_Tezpur_real_cloud_2025-02-16.tif     (about 35% cloud)
+   4_Sentinel-2_Tura_real_cloud_2024-01-11.tif       (about 61% cloud - very cloudy)
+
+   Real cloudy Sentinel-2 images of North-East India, georeferenced
+   (they carry their map position), Green / Red / NIR bands.
+   Steps:  Satellite = Sentinel-2
+           Step 2: "Fetch a clear reference automatically" = ON
+           Step 3: MeghGAN -> press "Remove clouds with MeghGAN"
+   Optional: turn on "Compare all four models" to rank all four.
+   Best ones to show first: 1 (Itanagar) and 2 (Kohima).
+
+
+B. Ordinary pictures (like an image downloaded from Google)
+   5_Picture_guwahati_2025-10-12_natural_colour.jpg
+   6_Picture_guwahati_2025-10-12_false_colour.jpg
+       -> for this one turn ON "Picture is in false colour (plants look red)"
+
+   Steps:  Step 2: turn ON "Find this picture on the map",
+           Place = Guwahati (from the list)  ->  wait for "Found"
+           Step 3: MeghGAN -> "Remove clouds with MeghGAN"
+   Without "Find this picture on the map" the area under the cloud is only
+   estimated (a picture has no location and no calibrated brightness).
+
+
+C. LISS-IV (our main sensor)
+   Use Step 1 -> "Example images" -> "Guwahati — LISS-IV, real cloud (1)".
+   It uses a real LISS-IV reference and the truth image of 23 May 2024,
+   so the scores (PSNR, SSIM ...) are shown as well.
+
+
+What to say while showing it
+   - Clouds (blue) and shadows (orange) are detected automatically.
+   - An older clear image of the same place is fetched as the reference.
+   - MeghGAN rebuilds only the cloudy pixels; clear pixels stay unchanged.
+   - Drag the before/after slider; show the confidence map (where the
+     result is an estimate) and download the GeoTIFF.
+
+Images 5-6: see data/external/CREDITS.md in the MeghMukt folder.

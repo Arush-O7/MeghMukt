@@ -1,0 +1,47 @@
+MeghMukt - three test images with known ground truth
+=====================================================
+
+Each test has three GeoTIFFs:
+   ..._1_cloudy.tif          the image with clouds and cloud shadows added
+   ..._2_reference.tif       an older clear pass of the same place
+   ..._3_original_clear.tif  the same image before the clouds were added (the truth)
+and a preview PNG (cloudy | original) and a result PNG (cloudy | reference | MeghGAN | original).
+
+   Test 1  LISS-IV, Brahmaputra floodplain near Guwahati  (13 Nov 2023, ref 1 Nov 2023)  41% cloud + 13% shadow
+   Test 2  LISS-IV, villages west of Guwahati              (13 Nov 2023, ref 1 Nov 2023)  46% cloud + 12% shadow
+   Test 3  Sentinel-2, Kaziranga                           (19 Dec 2023, ref 14 Nov 2023) 45% cloud + 15% shadow
+
+The clear images come from the training data. The clouds are made with the project's cloud
+simulator (thick cloud with soft edges + a shifted, darkened shadow), so the true ground under
+every cloud is known exactly.
+
+
+Steps in the dashboard
+   1. Step 1 -> "Upload my image" -> drop the ..._1_cloudy.tif file.
+      Satellite is picked from the file name (LISS-IV for Test 1-2, Sentinel-2 for Test 3).
+   2. Open "Optional: own reference / original image" (just below) and add
+         Reference image          -> ..._2_reference.tif
+         Original clear image     -> ..._3_original_clear.tif
+   3. Step 3: MeghGAN -> "Remove clouds with MeghGAN".
+      PSNR, SSIM, spectral angle, the error map and the truth are shown.
+   Optional: turn on "Compare all four models" to rank them on the same image.
+
+
+Scores (cloudy area only, as shown in the app)
+
+                         PSNR (dB)   SSIM    SAM (deg)
+   Test 1  cloudy          5.2      0.310     7.60
+           Temporal Fill  32.3      0.823     4.83
+           MeghGAN        33.5      0.867     4.30
+   Test 2  cloudy         19.0      0.547    10.66
+           Temporal Fill  33.0      0.745     4.50
+           MeghGAN        33.9      0.812     3.86
+   Test 3  cloudy          8.7      0.338    15.63
+           Temporal Fill  34.8      0.925     2.74
+           MeghGAN        34.3      0.932     3.07
+
+On Test 3 the reference is very close to the truth, so plain copying (Temporal Fill) gets a
+slightly higher PSNR; MeghGAN still has the best SSIM (structure).
+
+Note: very faint shadows (less than about 30% darker than the ground) can be missed by the
+cloud detector and then stay in the result.

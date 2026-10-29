@@ -80,6 +80,14 @@ In the dashboard you can:
 
 Tests: `./run_tests.sh` (32 tests).
 
+### Images to try in "Upload my image"
+
+- `MeghMukt_Demo_Upload_Images/`: four Sentinel-2 images with real clouds and two ordinary pictures
+  (see the `HOW_TO_USE.txt` inside; picture credits are in `data/external/web_examples/CREDITS.md`).
+- `MeghMukt_Test_Images/`: a clear image with clouds and shadows added, the reference, and the original
+  clear image, so the app can score the result. Only Test 3 (Sentinel-2, Kaziranga) is in the repo;
+  Tests 1 and 2 are made from LISS-IV data, which we do not redistribute.
+
 ## Data
 
 The data is not in this repo because it is around 7 GB, and the LISS-IV scenes have to be
